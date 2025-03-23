@@ -1,0 +1,135 @@
+.leaderboard-page {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.leaderboard-header {
+  margin-bottom: 2rem;
+}
+
+.leaderboard-title {
+  font-size: 2.5rem;
+  color: #2F5D62;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.leaderboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.leaderboard-row {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leaderboard-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rank {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.rank-1 {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: white;
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%);
+  color: white;
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
+  color: white;
+}
+
+.rank-other {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2F5D62;
+}
+
+.player-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2F5D62;
+}
+
+.score {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2F5D62;
+}
+
+@media (max-width: 768px) {
+  .player-stats {
+    gap: 1rem;
+  }
+  
+  .stat {
+    display: none;
+  }
+  
+  .score {
+    font-size: 1.2rem;
+  }
+}
+
+.highlighted {
+  border: 2px solid #FFD700; /* Gold outline */
+  border-radius: 12px;
+} 

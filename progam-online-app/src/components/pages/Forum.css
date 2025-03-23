@@ -1,0 +1,90 @@
+.forum-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.forum-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.forum-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2F5D62;
+  margin-bottom: 1rem;
+}
+
+.forum-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+.thread {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.thread-meta {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.thread-title {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #2F5D62;
+}
+
+.thread-content {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.thread-reply {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.teacher-reply {
+  background-color: #e0f7fa;
+  border-left: 5px solid #00796b;
+}
+
+.thread-reply-meta {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.new-query {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.query-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.query-input::placeholder {
+  color: #aaa;
+} 

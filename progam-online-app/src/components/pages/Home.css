@@ -1,0 +1,263 @@
+.home-container {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2F5D62;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.lesson-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.play-button {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.play-button i {
+  font-size: 1.8rem;
+  color: #2F5D62;
+}
+
+.play-button:hover {
+  background: white;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2F5D62;
+}
+
+.last-edited {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: auto;
+}
+
+.leaderboard-card {
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%),
+              url('../../../2778807f4a96176bab222876d209ff62.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboard-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
+}
+
+.leaderboard-card .leaderboard-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  position: relative;
+  text-shadow:rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-card .leaderboard-list {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard-card .leaderboard-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.leaderboard-card .player-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.leaderboard-card .player-name {
+  color: #fff;
+}
+
+.leaderboard-card .score {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.leaderboard-card .see-more {
+  display: block;
+  text-align: right;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.leaderboard-card .see-more:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.topic-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.algorithms {
+  background-color: #4a6fa5;
+  color: white;
+}
+
+.kotlin {
+  background-color: #eb9f1c;
+  color: white;
+}
+
+.databases {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.dynamic-programming {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.streak-container {
+  background: white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.streak-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.streak-days {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.day {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.completed {
+  background-color: #4caf50;
+  color: white;
+}
+
+.incomplete {
+  background-color: #e0e0e0;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .lesson-thumbnail {
+    height: 150px;
+  }
+} 

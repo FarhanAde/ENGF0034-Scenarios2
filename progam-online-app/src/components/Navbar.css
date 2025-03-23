@@ -1,0 +1,157 @@
+.navbar {
+  background: linear-gradient(90deg, #054683 0%, #0d706b 100%);
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+  
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  padding: 0 2rem;
+  max-width: 1500px;
+}
+  
+.navbar-logo {
+  color: #5FBDBD;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.navbar-logo:hover {
+  color: #5FBDBD;
+  text-decoration: none;
+}
+  
+.bi-outlet {
+  margin-left: .2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+  
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.nav-item {
+  height: 70px;
+}
+  
+.nav-link {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 4px solid #5FBDBD;
+  transition: all 0.2s ease-out;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.icon-button:hover {
+  color: #5FBDBD;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #2F5D62;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-link:hover {
+    background-color: #5FBDBD;
+    color: #fff;
+    border-bottom: none;
+  }
+
+  .navbar-logo {
+    position: relative;
+    transform: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .bi-x-square {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+
+  .navbar-icons {
+    display: none;
+  }
+}

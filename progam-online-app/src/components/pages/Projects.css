@@ -1,0 +1,120 @@
+.projects-container {
+  padding: 2rem;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #34495e;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 1rem;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin: 0 1rem 1rem;
+}
+
+.project-timestamp {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  margin: 0 1rem 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 1rem 1rem;
+}
+
+.project-tag {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.3rem 0.6rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.project-tag.machine-learning {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+.project-tag.frontend {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.project-tag.backend {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.project-tag.group-project {
+  background-color: #9c27b0;
+  color: #fff;
+}
+
+.project-tag.cplusplus {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.project-tag.jupyter {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.project-tag.python {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.project-tag.react {
+  background-color: #00bcd4;
+  color: #fff;
+}
+
+.project-tag.vr {
+  background-color: #8bc34a;
+  color: #fff;
+}
+
+.project-tag.unity {
+  background-color: #795548;
+  color: #fff;
+} 
