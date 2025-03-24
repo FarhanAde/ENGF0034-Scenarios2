@@ -1,0 +1,122 @@
+1. GRAMMAR
+
+// EBNF for the porgramming language
+
+program      ::= (statement)* ;
+
+statement    ::= assignment_statement
+              | expression_statement
+              | return_statement
+              | break_statement
+              | continue_statement
+              | if_statement
+              | while_statement
+              | function_declaration
+              ;
+
+assignment_statement ::= identifier '=' expression ';' ;
+
+expression_statement ::= expression ';' ;
+
+if_statement ::= 'if' expression block ('else' block)? ;
+
+return_statement ::= 'return' expression ';' ;
+
+break_statement ::= 'break' ';' ;
+
+continue_statement ::= 'continue' ';' ;
+
+while_statement ::= 'while' expression block ;
+
+function_declaration ::= 'def' identifier '(' (identifier (',' identifier)*)? ')' block ;
+
+block         ::= '{' (statement)* '}' ;
+
+expression    ::= 
+                  expression ('or' | 'and') expression |
+                  'not' expression |
+                  expression ('==' | '!=' | '<' | '>' | '<=' | '>=') expression |
+                  expression ('+' | '-') expression |
+                  expression ('*' | '/' | '//' | '%') expression |
+                  primary_expression ;
+
+
+primary_expression ::= identifier
+                  | function_call
+                  | integer
+                  | float
+                  | string
+                  | boolean
+                  | '(' expression ')'
+                  ;
+
+function_call ::= expression '(' (expression (',' expression)*)? ')' ;
+
+identifier    ::= letter (letter | digit)* ;
+
+boolean       ::= 'True' | 'False' ;
+
+integer       ::= ('-')? digit+ ;
+
+float         ::= ('-')? digit+ '.' digit+ ;
+
+string        ::= '"' (any_character_except_quote_or_backslash | escape_seq) '"'
+
+letter        ::= 'a'..'z' | 'A'..'Z' | '_' ;
+
+digit         ::= '0'..'9' ;
+
+escape_seq    ::= '\n' | '\\' | '\"' ;
+
+keyword       ::= 'if' | 'else' | 'while' | 'def' | 'return' | 'or' | 'and' | 'True' | 'False';
+
+All whitespace is ignored except for separating tokens.
+
+2. DATA MODEL
+
+Data types:
+String, Integer, Float, Boolean, Function
+
+OPERATOR PRECENDENCE RULES
+
+0 - or
+1 - and
+2 - not
+3 - ==, !=, <, >, <=, >=
+5 - +, -
+6 - *, /, //, %
+7 - function calls
+8 - bracketed expressions
+9 - identifiers and literals
+
+ORDER OF EVALUATION
+
+All operations occur left to right. 
+The operations "or" and "and" are short circuiting. 
+All other operations are eager. 
+
+STRUCTURE OF A PROGRAM
+
+A program is constructed from code blocks.
+A block is a piece of program text that is executed as a unit.
+The following is a blocks: a function body.
+
+NAMES AND BINDINGS
+
+Names refer to objects. Names are introduced by name binding operations.
+
+The following constructs bind names:
+function definitions,
+assignment expressions
+
+RESOLUTION OF NAMES
+
+A scope defines the visibility of a name within a block. 
+If a local variable is defined in a block, its scope includes that block. 
+If the definition occurs in a function block, the scope extends to any blocks contained within the defining one, 
+unless a contained block introduces a different binding for the name.
+
+When a name is used in a code block, it is resolved using the nearest enclosing scope. 
+The set of all such scopes visible to a code block is called the block’s environment.
+
+When a name is not found at all, a UndefinedError exception is raised. 
