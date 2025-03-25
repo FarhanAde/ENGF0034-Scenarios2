@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Louis", "score": 1578, "completedLessons": 42, "streak": 15 },
+  { "id": 2, "name": "Farhan", "score": 1493, "completedLessons": 38, "streak": 12 },
+  { "id": 3, "name": "Licia", "score": 1402, "completedLessons": 35, "streak": 8 },
+  { "id": 4, "name": "Quang Loc", "score": 1356, "completedLessons": 33, "streak": 6 },
+  { "id": 5, "name": "Mark", "score": 1298, "completedLessons": 31, "streak": 4 },
+  { "id": 6, "name": "Fiona", "score": 1245, "completedLessons": 29, "streak": 7 },
+  { "id": 7, "name": "Yuzuko", "score": 1187, "completedLessons": 27, "streak": 3 },
+  { "id": 8, "name": "Max", "score": 1134, "completedLessons": 25, "streak": 5 },
+  { "id": 9, "name": "David", "score": 1089, "completedLessons": 23, "streak": 2 },
+  { "id": 10, "name": "Graham", "score": 1023, "completedLessons": 21, "streak": 4 }
+]
