@@ -1,0 +1,121 @@
+[
+  {
+    "id": "hw1234",
+    "title": "Python Data Analysis",
+    "description": "In this assignment, you will analyze a dataset using Python's data science libraries.",
+    "content": [
+      {
+        "type": "text",
+        "content": "For this assignment, you'll be working with a dataset of sales figures. Your task is to analyze the data and extract meaningful insights."
+      },
+      {
+        "type": "text",
+        "content": "Use pandas for data manipulation, matplotlib or seaborn for visualization, and numpy for numerical operations."
+      },
+      {
+        "type": "heading",
+        "content": "Tasks"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Load the sales dataset into a pandas DataFrame",
+          "Clean the data by handling missing values and outliers",
+          "Create at least 3 visualizations to show sales trends",
+          "Calculate summary statistics for different product categories",
+          "Create a function to predict next month's sales based on historical data"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Example Code"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load dataset\ndf = pd.read_csv('sales_data.csv')\n\n# Display first few rows\nprint(df.head())\n\n# Basic statistics\nprint(df.describe())"
+      }
+    ],
+    "starterCode": "# Your Python Data Analysis code here\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# TODO: Load the dataset\n\n# TODO: Clean the data\n\n# TODO: Create visualizations\n\n# TODO: Calculate statistics\n\n# TODO: Predict next month's sales",
+    "testCases": ["Test case 1: Dataset loading", "Test case 2: Data cleaning", "Test case 3: Visualization"]
+  },
+  {
+    "id": "hw2345",
+    "title": "Database Design",
+    "description": "Create a database schema for an online bookstore.",
+    "content": [
+      {
+        "type": "text",
+        "content": "In this assignment, you will design a database schema for an online bookstore. Your schema should capture all essential entities and relationships."
+      },
+      {
+        "type": "heading",
+        "content": "Requirements"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Design tables for books, authors, customers, orders, and reviews",
+          "Establish appropriate relationships between tables",
+          "Implement primary and foreign keys",
+          "Write SQL queries to create the database schema",
+          "Write sample queries to demonstrate functionality"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Ensure your database design follows normalization principles to avoid data redundancy."
+      },
+      {
+        "type": "heading",
+        "content": "Example Schema"
+      },
+      {
+        "type": "code",
+        "language": "sql",
+        "content": "CREATE TABLE authors (\n  author_id INT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  bio TEXT\n);\n\nCREATE TABLE books (\n  book_id INT PRIMARY KEY,\n  title VARCHAR(200) NOT NULL,\n  author_id INT,\n  published_date DATE,\n  price DECIMAL(10, 2),\n  FOREIGN KEY (author_id) REFERENCES authors(author_id)\n);"
+      }
+    ],
+    "starterCode": "-- Your SQL Database Schema code here\n\n-- TODO: Create authors table\n\n-- TODO: Create books table\n\n-- TODO: Create customers table\n\n-- TODO: Create orders table\n\n-- TODO: Create reviews table",
+    "testCases": ["Test case 1: Schema validation", "Test case 2: Relationship integrity", "Test case 3: Query functionality"]
+  },
+  {
+    "id": "hw3456",
+    "title": "Algorithm Implementation",
+    "description": "Implement and analyze different sorting algorithms.",
+    "content": [
+      {
+        "type": "text",
+        "content": "For this assignment, you will implement several sorting algorithms and analyze their performance on different input sizes and types."
+      },
+      {
+        "type": "heading",
+        "content": "Required Algorithms"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Bubble Sort",
+          "Insertion Sort",
+          "Merge Sort",
+          "Quick Sort"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "For each algorithm, implement the sorting function and measure its runtime on arrays of various sizes. Compare the empirical results with the theoretical time complexities."
+      },
+      {
+        "type": "heading",
+        "content": "Example Implementation"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\n# Test the algorithm\ntest_array = [64, 34, 25, 12, 22, 11, 90]\nprint(bubble_sort(test_array))"
+      }
+    ],
+    "starterCode": "# Your Sorting Algorithms code here\n\ndef bubble_sort(arr):\n    # TODO: Implement bubble sort\n    pass\n\ndef insertion_sort(arr):\n    # TODO: Implement insertion sort\n    pass\n\ndef merge_sort(arr):\n    # TODO: Implement merge sort\n    pass\n\ndef quick_sort(arr):\n    # TODO: Implement quick sort\n    pass\n\n# Test your implementations\ntest_array = [64, 34, 25, 12, 22, 11, 90]\n# TODO: Call and test each sorting function",
+    "testCases": ["Test case 1: Bubble Sort correctness", "Test case 2: Merge Sort correctness", "Test case 3: Performance comparison"]
+  }
+]
