@@ -214,14 +214,25 @@ def run_code():
     f = io.StringIO()
     with redirect_stdout(f):
         try:
-            #result = MPI.run_code(code)
-            #output = f.getvalue()
             exec(code)
             output = f.getvalue()
         except Exception as e:
             return jsonify({"error": str(e)}), 500
     
     return jsonify({"output": output})
+
+@app.route('/getProblems')
+def get_problems():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, 'data', 'problems.json')
+    
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        return jsonify(data)
+    except Exception as e:
+        print(f"Error loading problems data: {str(e)}")
+        return jsonify({"error": str(e)}), 500
             
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

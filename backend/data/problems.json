@@ -1,0 +1,92 @@
+[
+  {
+    "id": "p1001",
+    "number": 1001,
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+    "solvedCount": 1243,
+    "tags": ["Arrays", "Hash Table"]
+  },
+  {
+    "id": "p1002",
+    "number": 1002,
+    "title": "Reverse String",
+    "difficulty": "Easy",
+    "description": "Write a function that reverses a string. The input string is given as an array of characters.",
+    "solvedCount": 987,
+    "tags": ["String", "Two Pointers"]
+  },
+  {
+    "id": "p1003",
+    "number": 1003,
+    "title": "Maximum Subarray",
+    "difficulty": "Medium",
+    "description": "Given an integer array nums, find the contiguous subarray which has the largest sum and return its sum.",
+    "solvedCount": 756,
+    "tags": ["Arrays", "Divide and Conquer", "Dynamic Programming"]
+  },
+  {
+    "id": "p1004",
+    "number": 1004,
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+    "solvedCount": 892,
+    "tags": ["String", "Stack"]
+  },
+  {
+    "id": "p1005",
+    "number": 1005,
+    "title": "Merge Sort",
+    "difficulty": "Medium",
+    "description": "Implement the merge sort algorithm to sort an array of integers in ascending order.",
+    "solvedCount": 521,
+    "tags": ["Sorting", "Divide and Conquer"]
+  },
+  {
+    "id": "p1006",
+    "number": 1006,
+    "title": "Binary Search",
+    "difficulty": "Easy",
+    "description": "Given a sorted array of integers, implement a binary search algorithm to find a target value.",
+    "solvedCount": 712,
+    "tags": ["Binary Search", "Arrays"]
+  },
+  {
+    "id": "p1007",
+    "number": 1007,
+    "title": "LRU Cache",
+    "difficulty": "Hard",
+    "description": "Design and implement a data structure for Least Recently Used (LRU) cache. It should support get and put operations with O(1) time complexity.",
+    "solvedCount": 318,
+    "tags": ["Design", "Hash Table", "Linked List"]
+  },
+  {
+    "id": "p1008",
+    "number": 1008,
+    "title": "Fibonacci Number",
+    "difficulty": "Easy",
+    "description": "Calculate the nth Fibonacci number in the sequence. Optimize for performance.",
+    "solvedCount": 845,
+    "tags": ["Math", "Dynamic Programming", "Recursion"]
+  },
+  {
+    "id": "p1009",
+    "number": 1009,
+    "title": "Word Search",
+    "difficulty": "Medium",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of adjacent cells.",
+    "solvedCount": 489,
+    "tags": ["Arrays", "Backtracking", "Matrix"]
+  },
+  {
+    "id": "p1010",
+    "number": 1010,
+    "title": "Dijkstra's Algorithm",
+    "difficulty": "Hard",
+    "description": "Implement Dijkstra's algorithm to find the shortest path between nodes in a graph.",
+    "solvedCount": 247,
+    "tags": ["Graph", "Shortest Path", "Heap"]
+  }
+]

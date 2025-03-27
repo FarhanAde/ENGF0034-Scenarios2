@@ -1,0 +1,229 @@
+.practice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.practice-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.practice-layout {
+  display: flex;
+  gap: 30px;
+}
+
+/* Leaderboard Section */
+.leaderboard-section {
+  flex: 1;
+  max-width: 400px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.see-all-link {
+  color: #4285f4;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.see-all-link:hover {
+  text-decoration: underline;
+}
+
+.leaderboard-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th {
+  background-color: #f5f5f5;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #666;
+  font-size: 14px;
+}
+
+.leaderboard-table td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+.top-rank {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.rank {
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.user-name {
+  color: #333;
+  font-weight: 500;
+}
+
+.problems, .points {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Problems Section */
+.problems-section {
+  flex: 2;
+}
+
+.toggle-problems-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.toggle-problems-btn:hover {
+  background-color: #3367d6;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.problem-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.problem-number {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #999;
+  font-weight: 600;
+}
+
+.problem-title {
+  margin: 0 0 15px 0;
+  color: #333;
+  padding-right: 40px; /* Make room for problem number */
+}
+
+.problem-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.problem-difficulty {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.difficulty-easy {
+  background-color: #a3be8c;
+  color: white;
+}
+
+.difficulty-medium {
+  background-color: #ebcb8b;
+  color: #333;
+}
+
+.difficulty-hard {
+  background-color: #bf616a;
+  color: white;
+}
+
+.problem-solved {
+  color: #666;
+  font-size: 14px;
+}
+
+.problem-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.problem-tag {
+  background-color: #f1f3f4;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.practice-loading, .practice-error {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.practice-error {
+  color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .practice-layout {
+    flex-direction: column;
+  }
+  
+  .leaderboard-section {
+    max-width: none;
+  }
+}

@@ -1,12 +1,102 @@
 [
-  { "id": 1, "name": "Louis", "score": 1578, "completedLessons": 42, "streak": 15 },
-  { "id": 2, "name": "Farhan", "score": 1493, "completedLessons": 38, "streak": 12 },
-  { "id": 3, "name": "Licia", "score": 1402, "completedLessons": 35, "streak": 8 },
-  { "id": 4, "name": "Quang Loc", "score": 1356, "completedLessons": 33, "streak": 6 },
-  { "id": 5, "name": "Mark", "score": 1298, "completedLessons": 31, "streak": 4 },
-  { "id": 6, "name": "Fiona", "score": 1245, "completedLessons": 29, "streak": 7 },
-  { "id": 7, "name": "Yuzuko", "score": 1187, "completedLessons": 27, "streak": 3 },
-  { "id": 8, "name": "Max", "score": 1134, "completedLessons": 25, "streak": 5 },
-  { "id": 9, "name": "David", "score": 1089, "completedLessons": 23, "streak": 2 },
-  { "id": 10, "name": "Graham", "score": 1023, "completedLessons": 21, "streak": 4 }
+  {
+    "id": 1,
+    "name": "Louis",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?1",
+    "score": 1578,
+    "completedLessons": 42,
+    "problemsSolved": 87,
+    "points": 9450,
+    "streak": 15
+  },
+  {
+    "id": 2,
+    "name": "Farhan",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?2",
+    "score": 1493,
+    "completedLessons": 38,
+    "problemsSolved": 79,
+    "points": 8620,
+    "streak": 12
+  },
+  {
+    "id": 3,
+    "name": "Licia",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?3",
+    "score": 1402,
+    "completedLessons": 35,
+    "problemsSolved": 73,
+    "points": 7950,
+    "streak": 8
+  },
+  {
+    "id": 4,
+    "name": "Quang Loc",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?4",
+    "score": 1356,
+    "completedLessons": 33,
+    "problemsSolved": 68,
+    "points": 7400,
+    "streak": 6
+  },
+  {
+    "id": 5,
+    "name": "Mark",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?5",
+    "score": 1298,
+    "completedLessons": 31,
+    "problemsSolved": 65,
+    "points": 7100,
+    "streak": 4
+  },
+  {
+    "id": 6,
+    "name": "Fiona",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?6",
+    "score": 1245,
+    "completedLessons": 29,
+    "problemsSolved": 61,
+    "points": 6650,
+    "streak": 7
+  },
+  {
+    "id": 7,
+    "name": "Yuzuko",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?7",
+    "score": 1187,
+    "completedLessons": 27,
+    "problemsSolved": 57,
+    "points": 6200,
+    "streak": 3
+  },
+  {
+    "id": 8,
+    "name": "Max",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?8",
+    "score": 1134,
+    "completedLessons": 25,
+    "problemsSolved": 54,
+    "points": 5850,
+    "streak": 5
+  },
+  {
+    "id": 9,
+    "name": "David",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?9",
+    "score": 1089,
+    "completedLessons": 23,
+    "problemsSolved": 51,
+    "points": 5500,
+    "streak": 2
+  },
+  {
+    "id": 10,
+    "name": "Graham",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?10",
+    "score": 1023,
+    "completedLessons": 21,
+    "problemsSolved": 48,
+    "points": 5150,
+    "streak": 4
+  }
 ]
