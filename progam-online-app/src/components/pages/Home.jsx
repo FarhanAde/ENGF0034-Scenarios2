@@ -1,10 +1,44 @@
 //import React from "react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Home.css";
 import codeStockImage from "../../../codeStockImage.jpg";
 import moodleBanner from "../../../Moodle_Banner_02.jpg";
 
 function Home() {
+  const [leaderboardData, setLeaderboardData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchLeaderboardData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/getLeaderboard');
+        if (!response.ok) {
+          throw new Error('Failed to fetch leaderboard data');
+        }
+        const data = await response.json();
+        const sortedData = [...data].sort((a, b) => b.score - a.score);
+        setLeaderboardData(sortedData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchLeaderboardData();
+  }, []);
+
+  const getMedalEmoji = (position) => {
+    switch (position) {
+      case 0: return '🥇';
+      case 1: return '🥈';
+      case 2: return '🥉';
+      default: return '';
+    }
+  };
+
   return (
     <div className="home-container">
       <h1 className="welcome-title">Welcome back</h1>
@@ -44,29 +78,23 @@ function Home() {
         {/* Leaderboard Card */}
         <div className="card leaderboard-card">
           <h2 className="leaderboard-title">Leaderboard</h2>
-          <ul className="leaderboard-list">
-            <li className="leaderboard-item">
-              <div className="player-info">
-                <span className="medal">🥇</span>
-                <span>Louis</span>
-              </div>
-              <span className="score">1578</span>
-            </li>
-            <li className="leaderboard-item">
-              <div className="player-info">
-                <span className="medal">🥈</span>
-                <span>Farhan</span>
-              </div>
-              <span className="score">1493</span>
-            </li>
-            <li className="leaderboard-item">
-              <div className="player-info">
-                <span className="medal">🥉</span>
-                <span>Licia</span>
-              </div>
-              <span className="score">1402</span>
-            </li>
-          </ul>
+          {isLoading ? (
+            <p>Loading leaderboard...</p>
+          ) : error ? (
+            <p>Error loading leaderboard: {error}</p>
+          ) : (
+            <ul className="leaderboard-list">
+              {leaderboardData.slice(0, 3).map((player, index) => (
+                <li key={player.id} className="leaderboard-item">
+                  <div className="player-info">
+                    <span className="medal">{getMedalEmoji(index)}</span>
+                    <span>{player.name}</span>
+                  </div>
+                  <span className="score">{player.score}</span>
+                </li>
+              ))}
+            </ul>
+          )}
           <Link to="/leaderboard" className="see-more">See full standings &gt;</Link>
         </div>
       </div>

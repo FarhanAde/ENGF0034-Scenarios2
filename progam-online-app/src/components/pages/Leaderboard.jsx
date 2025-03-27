@@ -1,18 +1,31 @@
 import "./Leaderboard.css";
+import { useState, useEffect } from "react";
 
 function Leaderboard() {
-  const leaderboardData = [
-    { id: 1, name: "Louis", score: 1578, completedLessons: 42, streak: 15 },
-    { id: 2, name: "Farhan", score: 1493, completedLessons: 38, streak: 12 },
-    { id: 3, name: "Licia", score: 1402, completedLessons: 35, streak: 8 },
-    { id: 4, name: "Quang Loc", score: 1356, completedLessons: 33, streak: 6 },
-    { id: 5, name: "Mark", score: 1298, completedLessons: 31, streak: 4 },
-    { id: 6, name: "Fiona", score: 1245, completedLessons: 29, streak: 7 },
-    { id: 7, name: "Yuzuko", score: 1187, completedLessons: 27, streak: 3 },
-    { id: 8, name: "Max", score: 1134, completedLessons: 25, streak: 5 },
-    { id: 9, name: "David", score: 1089, completedLessons: 23, streak: 2 },
-    { id: 10, name: "Graham", score: 1023, completedLessons: 21, streak: 4 }
-  ];
+  const [leaderboardData, setLeaderboardData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchLeaderboardData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/getLeaderboard');
+        if (!response.ok) {
+          throw new Error('Failed to fetch leaderboard data');
+        }
+        const data = await response.json();
+        // Sort data by score in descending order
+        const sortedData = [...data].sort((a, b) => b.score - a.score);
+        setLeaderboardData(sortedData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchLeaderboardData();
+  }, []);
 
   const getRankClass = (rank) => {
     if (rank === 1) return "rank-1";
@@ -20,6 +33,28 @@ function Leaderboard() {
     if (rank === 3) return "rank-3";
     return "rank-other";
   };
+
+  if (isLoading) {
+    return (
+      <div className="leaderboard-page">
+        <div className="leaderboard-header">
+          <h1 className="leaderboard-title">Class Leaderboard</h1>
+          <p className="leaderboard-subtitle">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="leaderboard-page">
+        <div className="leaderboard-header">
+          <h1 className="leaderboard-title">Class Leaderboard</h1>
+          <p className="leaderboard-subtitle">Error: {error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="leaderboard-page">
@@ -29,11 +64,11 @@ function Leaderboard() {
       </div>
 
       <div className="leaderboard-grid">
-        {leaderboardData.map((player) => (
+        {leaderboardData.map((player, index) => (
           <div key={player.id} className={`leaderboard-row ${player.name === "Farhan" ? "highlighted" : ""}`}>
             <div className="player-info">
-              <div className={`rank ${getRankClass(player.id)}`}>
-                {player.id}
+              <div className={`rank ${getRankClass(index + 1)}`}>
+                {index + 1}
               </div>
               <span className="player-name">{player.name}</span>
             </div>
