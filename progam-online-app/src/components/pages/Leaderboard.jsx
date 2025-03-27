@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Leaderboard.css";
 
+
 function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
