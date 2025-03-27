@@ -1,5 +1,5 @@
-import "./Leaderboard.css";
 import { useState, useEffect } from "react";
+import "./Leaderboard.css";
 
 function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -90,4 +90,4 @@ function Leaderboard() {
   );
 }
 
-export default Leaderboard; 
+export default Leaderboard;

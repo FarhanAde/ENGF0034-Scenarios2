@@ -13,6 +13,8 @@ import Forum from "./components/pages/Forum"
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Leaderboard from './components/pages/Leaderboard'
+import LessonDetail from "./components/pages/LessonDetail";
+import HomeworkDetail from "./components/pages/HomeworkDetail";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/practice" element={<Practice/>}/>
         <Route path="/forum" element={<Forum/>}/>
         <Route path="/leaderboard" element={<Leaderboard/>}/>
+        <Route path="/lesson/:lessonId" element={<LessonDetail />} />
+        <Route path="/homework/:homeworkId" element={<HomeworkDetail />} />
       </Routes>
       <Footer/>
     </Router>
