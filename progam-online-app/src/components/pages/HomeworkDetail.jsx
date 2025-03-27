@@ -91,7 +91,6 @@ const HomeworkDetail = () => {
       body: JSON.stringify(payload)
     })
     .then(response => {
-      alert(response);
       if (!response.ok) {
         throw new Error('Failed to run code');
       }

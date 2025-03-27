@@ -1,15 +1,31 @@
 import { useState, useEffect } from "react";
 import "./Leaderboard.css";
-import API from "../../config/api";
+
 
 function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(API.getUrl(API.endpoints.leaderboard))
-      .then(response => response.json())
-      .then(data => setLeaderboardData(data))
-      .catch(error => console.error('Error fetching leaderboard:', error));
+    const fetchLeaderboardData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/getLeaderboard');
+        if (!response.ok) {
+          throw new Error('Failed to fetch leaderboard data');
+        }
+        const data = await response.json();
+        // Sort data by score in descending order
+        const sortedData = [...data].sort((a, b) => b.score - a.score);
+        setLeaderboardData(sortedData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchLeaderboardData();
   }, []);
 
   const getRankClass = (rank) => {
@@ -19,6 +35,28 @@ function Leaderboard() {
     return "rank-other";
   };
 
+  if (isLoading) {
+    return (
+      <div className="leaderboard-page">
+        <div className="leaderboard-header">
+          <h1 className="leaderboard-title">Class Leaderboard</h1>
+          <p className="leaderboard-subtitle">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="leaderboard-page">
+        <div className="leaderboard-header">
+          <h1 className="leaderboard-title">Class Leaderboard</h1>
+          <p className="leaderboard-subtitle">Error: {error}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="leaderboard-page">
       <div className="leaderboard-header">
@@ -27,11 +65,11 @@ function Leaderboard() {
       </div>
 
       <div className="leaderboard-grid">
-        {leaderboardData.map((player) => (
+        {leaderboardData.map((player, index) => (
           <div key={player.id} className={`leaderboard-row ${player.name === "Farhan" ? "highlighted" : ""}`}>
             <div className="player-info">
-              <div className={`rank ${getRankClass(player.id)}`}>
-                {player.id}
+              <div className={`rank ${getRankClass(index + 1)}`}>
+                {index + 1}
               </div>
               <span className="player-name">{player.name}</span>
             </div>
