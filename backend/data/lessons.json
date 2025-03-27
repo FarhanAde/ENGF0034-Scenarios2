@@ -34,5 +34,11 @@
     "title": "Machine Learning",
     "image": "https://atriainnovation.com/uploads/2023/11/portada-9.jpg",
     "progress": 0
+  },
+  {
+    "id": "7f4e21",
+    "title": "Object-Oriented Programming",
+    "image": "https://files.realpython.com/media/pcl-Class-Concepts-Object-Oriented-Programming-in-Python_Watermarked.cec519e31003.jpg",
+    "progress": 25
   }
 ]
