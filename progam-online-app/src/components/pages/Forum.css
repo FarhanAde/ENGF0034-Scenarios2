@@ -20,6 +20,78 @@
 .forum-subtitle {
   font-size: 16px;
   color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+.username-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.new-thread-button {
+  background-color: #2F5D62;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-thread-button:hover {
+  background-color: #1a464b;
+}
+
+.new-thread-form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thread-title-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.thread-content-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.submit-thread-button {
+  background-color: #2F5D62;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.2s;
+}
+
+.submit-thread-button:hover {
+  background-color: #1a464b;
 }
 
 .thread {
@@ -70,21 +142,63 @@
   margin-top: 5px;
 }
 
-.new-query {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.query-input {
-  width: 80%;
-  padding: 10px;
+.reply-button {
+  background-color: #5FBDBD;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
   font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  color: #333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
 }
 
-.query-input::placeholder {
-  color: #aaa;
-} 
+.reply-button:hover {
+  background-color: #4a9b9b;
+}
+
+.reply-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reply-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.reply-buttons {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.submit-reply-button {
+  background-color: #5FBDBD;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.cancel-reply-button {
+  background-color: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-reply-button:hover {
+  background-color: #e0e0e0;
+}
