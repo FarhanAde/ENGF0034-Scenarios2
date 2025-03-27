@@ -59,8 +59,6 @@ const Practice = () => {
 
   return (
     <div className="practice-container">
-      <h1 className="practice-title">Practice Area</h1>
-      
       <div className="practice-layout">
         {/* Leaderboard Section */}
         <section className="leaderboard-section">
@@ -73,7 +71,6 @@ const Practice = () => {
             <table className="leaderboard-table">
               <thead>
                 <tr>
-                  <th>Rank</th>
                   <th>User</th>
                   <th>Problems Solved</th>
                   <th>Points</th>

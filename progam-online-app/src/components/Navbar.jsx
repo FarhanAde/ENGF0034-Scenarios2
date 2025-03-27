@@ -50,9 +50,9 @@ function Navbar() {
           <button className="icon-button">
             <i className="bi bi-bell"></i>
           </button>
-          <button className="icon-button">
+          <Link to="/profile" className="icon-button">
             <i className="bi bi-person-circle"></i>
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

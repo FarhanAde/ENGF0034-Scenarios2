@@ -97,8 +97,14 @@ const HomeworkDetail = () => {
       return response.json();
     })
     .then(data => {
-      // Display the execution results in the terminal
-      setOutput(data.output || "Code executed successfully with no output.");
+      // Handle the new response format with result and time
+      if (data.result !== undefined) {
+        const executionTime = data.time ? `\n\nExecution time: ${data.time}ms` : '';
+        let result = data.result || 'Code executed with no output.'; 
+        setOutput(result + executionTime);
+      } else {
+        setOutput("Code executed successfully with no output.");
+      }
     })
     .catch(err => {
       console.error("Error running code:", err);
@@ -108,6 +114,41 @@ const HomeworkDetail = () => {
 
   const handleClearOutput = () => {
     setOutput("");
+  };
+
+  const handleSubmitCode = () => {
+    // Show submission status in the output terminal
+    setOutput("Submitting your solution...");
+    
+    // Create a payload with the code and assignment information
+    const payload = {
+      code: code,
+      homeworkId: homeworkId,
+      submissionDate: new Date().toISOString()
+    };
+    
+    // Send the code to the server for submission
+    fetch(`${API.baseUrl}/submitHomework`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to submit homework');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Display success message and any feedback
+      setOutput(data.message || "Homework submitted successfully!");
+    })
+    .catch(err => {
+      console.error("Error submitting homework:", err);
+      setOutput(`Error: ${err.message}\n\nFailed to submit your homework. Please try again.`);
+    });
   };
 
   const renderContent = (content) => {
@@ -177,7 +218,7 @@ const HomeworkDetail = () => {
               <h2>Code Editor</h2>
               <div className="editor-actions">
                 <button className="run-btn" onClick={handleRunCode}>Run Code</button>
-                <button className="submit-btn">Submit</button>
+                <button className="submit-btn" onClick={handleSubmitCode}>Submit</button>
               </div>
             </div>
             <div className="editor-area">

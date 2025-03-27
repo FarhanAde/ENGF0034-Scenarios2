@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import Leaderboard from './components/pages/Leaderboard'
 import LessonDetail from "./components/pages/LessonDetail";
 import HomeworkDetail from "./components/pages/HomeworkDetail";
+import Profile from "./components/pages/Profile";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/leaderboard" element={<Leaderboard/>}/>
         <Route path="/lesson/:lessonId" element={<LessonDetail />} />
         <Route path="/homework/:homeworkId" element={<HomeworkDetail />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer/>
     </Router>

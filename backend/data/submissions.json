@@ -1,0 +1,12 @@
+[
+  {
+    "userId": 1,
+    "homeworkId": "hw3456",
+    "code": "# Your Sorting Algorithms code here\n\ndef bubble_sort(arr):\n    # TODO: Implement bubble sort\n    pass\n\ndef insertion_sort(arr):\n    # TODO: Implement insertion sort\n    pass\n\ndef merge_sort(arr):\n    # TODO: Implement merge sort\n    pass\n\ndef quick_sort(arr):\n    # TODO: Implement quick sort\n    pass\n\n# Test your implementations\ntest_array = [64, 34, 25, 12, 22, 11, 90]\n# TODO: Call and test each sorting function",
+    "submissionDate": "2025-03-27T17:49:34.590Z",
+    "submissionNumber": 1,
+    "result": "",
+    "time": 0.00038,
+    "success": true
+  }
+]

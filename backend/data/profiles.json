@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "name": "Louis Vettard",
+    "email": "louis.vettard@example.com",
+    "avatar": "https://source.unsplash.com/collection/4389261/100x100?1",
+    "completedLessons": 42,
+    "totalLessons": 60,
+    "problemsSolved": 87,
+    "totalProblems": 150,
+    "completedHomework": 15,
+    "totalHomework": 18,
+    "streak": 15,
+    "points": 9450,
+    "recentActivity": [
+      {
+        "icon": "check-circle-fill",
+        "description": "Completed lesson 'Introduction to Neural Networks'",
+        "time": "2 hours ago"
+      },
+      {
+        "icon": "trophy",
+        "description": "Solved problem 'Maximum Subarray'",
+        "time": "Yesterday"
+      },
+      {
+        "icon": "code-slash",
+        "description": "Submitted homework 'Recursive Functions'",
+        "time": "2 days ago"
+      },
+      {
+        "icon": "star-fill",
+        "description": "Earned achievement 'Python Master'",
+        "time": "3 days ago"
+      },
+      {
+        "icon": "check-circle-fill",
+        "description": "Completed lesson 'Data Structures: Trees'",
+        "time": "1 week ago"
+      }
+    ],
+    "achievements": [
+      {
+        "icon": "lightning-charge-fill",
+        "title": "Quick Learner",
+        "description": "Complete 10 lessons in a single day",
+        "unlocked": true
+      },
+      {
+        "icon": "calendar-check",
+        "title": "Consistency King",
+        "description": "Maintain a 14-day streak",
+        "unlocked": true
+      },
+      {
+        "icon": "award",
+        "title": "Problem Solver",
+        "description": "Solve 50 practice problems",
+        "unlocked": true
+      },
+      {
+        "icon": "trophy",
+        "title": "Top of the Class",
+        "description": "Reach #1 on the leaderboard",
+        "unlocked": true
+      },
+      {
+        "icon": "stars",
+        "title": "Python Master",
+        "description": "Complete all Python courses with perfect scores",
+        "unlocked": true
+      },
+      {
+        "icon": "gear",
+        "title": "Algorithm Expert",
+        "description": "Solve 20 hard problems",
+        "unlocked": false
+      }
+    ]
+  }
+]

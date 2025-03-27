@@ -6,6 +6,7 @@ import datetime
 import sys
 import io
 from contextlib import redirect_stdout
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -19,10 +20,20 @@ homework_path = os.path.join(current_dir, 'data', 'homework.json')
 homework_details_path = os.path.join(current_dir, 'data', 'homeworkdetails.json')
 mini_python_src_path = os.path.join(current_dir, 'mini_python', 'src')
 
-sys.path.append(mini_python_src_path)
-
-from program import MiniPythonInterpreter
-MPI = MiniPythonInterpreter()
+def execute_code(code):
+    # ideally we would have tests here...
+    # but for now we will just run the code
+    # and return the output
+    f = io.StringIO()
+    with redirect_stdout(f):
+        try:
+            t1 = time.time()
+            exec(code)
+            t2 = time.time()
+            output = f.getvalue()
+        except Exception as e:
+            return {"ok": False, "output": str(e), "time": 0}
+    return {"ok": True, "output": output, "time": t2 - t1}
 
 # Ensure data directory exists
 os.makedirs(os.path.dirname(forum_path), exist_ok=True)
@@ -175,9 +186,6 @@ def get_lesson_details(lessonId):
 
 @app.route('/getHomework')
 def get_homework():
-    # current_dir = os.path.dirname(os.path.abspath(__file__))
-    # file_path = os.path.join(current_dir, 'data', 'homework.json')
-    
     try:
         with open(homework_path, 'r') as file:
             data = json.load(file)
@@ -211,15 +219,9 @@ def run_code():
     data = request.json
     code = data['code']
     
-    f = io.StringIO()
-    with redirect_stdout(f):
-        try:
-            exec(code)
-            output = f.getvalue()
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
+    result = execute_code(code)
     
-    return jsonify({"output": output})
+    return jsonify({"result": result['output'], "time": round(result['time'], 5)})
 
 @app.route('/getProblems')
 def get_problems():
@@ -232,6 +234,86 @@ def get_problems():
         return jsonify(data)
     except Exception as e:
         print(f"Error loading problems data: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/submitHomework', methods=['POST'])
+def submit_homework():
+    try:
+        data = request.json
+        homework_id = data.get('homeworkId')
+        code = data.get('code')
+        user_id = data.get('userId', 1)  # Default to user 1 if not provided
+        submission_date = data.get('submissionDate')
+        
+        print(f"Processing submission for homework {homework_id} from user {user_id}")
+        
+        # Path to the submissions file
+        submissions_path = os.path.join(current_dir, 'data', 'submissions.json')
+        
+        # Load existing submissions
+        with open(submissions_path, 'r') as file:
+            submissions = json.load(file)
+        
+        # Count previous submissions for this user and homework to determine submission number
+        prev_submissions = [s for s in submissions if s.get('userId') == user_id and s.get('homeworkId') == homework_id]
+        submission_number = len(prev_submissions) + 1
+        
+        # Run the code to check results (you could add more sophisticated testing here)
+        result = execute_code(code)
+        
+        # Create new submission object
+        new_submission = {
+            'userId': user_id,
+            'homeworkId': homework_id,
+            'code': code,
+            'submissionDate': submission_date,
+            'submissionNumber': submission_number,
+            'result': result['output'],
+            'time': round(result['time'], 5),
+            'success': result['ok']
+        }
+        
+        # Add to submissions array
+        submissions.append(new_submission)
+        
+        # Save updated submissions back to file
+        with open(submissions_path, 'w') as file:
+            json.dump(submissions, file, indent=2)
+        
+        # Return success response
+        return jsonify({
+            'success': True,
+            'message': f"Homework submitted successfully! This is submission #{submission_number}.",
+            'submissionNumber': submission_number,
+            'time': round(result['time'], 5),
+            'result': result['output']
+        })
+    
+    except Exception as e:
+        print(f"Error submitting homework: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': f"Error submitting homework: {str(e)}"
+        }), 500
+
+@app.route('/getProfile/<userId>')
+def get_profile(userId):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, 'data', 'profiles.json')
+    
+    try:
+        with open(file_path, 'r') as file:
+            profiles = json.load(file)
+        
+        profile = next((p for p in profiles if str(p["id"]) == userId), None)
+        
+        if profile:
+            return jsonify(profile)
+        else:
+            return jsonify({"error": "Profile not found"}), 404
+    except Exception as e:
+        print(f"Error loading profile: {str(e)}")
         return jsonify({"error": str(e)}), 500
             
 if __name__ == '__main__':
