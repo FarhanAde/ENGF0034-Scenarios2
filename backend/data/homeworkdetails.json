@@ -86,11 +86,11 @@
     "content": [
       {
         "type": "text",
-        "content": "For this assignment, you will implement several sorting algorithms and analyze their performance on different input sizes and types."
+        "content": "In this module we've been exploring some different sorting algorithms."
       },
       {
         "type": "heading",
-        "content": "Required Algorithms"
+        "content": "Our Algorithms"
       },
       {
         "type": "list",
@@ -102,20 +102,14 @@
         ]
       },
       {
-        "type": "text",
-        "content": "For each algorithm, implement the sorting function and measure its runtime on arrays of various sizes. Compare the empirical results with the theoretical time complexities."
-      },
-      {
         "type": "heading",
-        "content": "Example Implementation"
+        "content": "Assignment Details "
       },
       {
-        "type": "code",
-        "language": "python",
-        "content": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\n# Test the algorithm\ntest_array = [64, 34, 25, 12, 22, 11, 90]\nprint(bubble_sort(test_array))"
+        "type": "text",
+        "content": "Please write an algorithm implementing bubble sort."
       }
     ],
-    "starterCode": "# Your Sorting Algorithms code here\n\ndef bubble_sort(arr):\n    # TODO: Implement bubble sort\n    pass\n\ndef insertion_sort(arr):\n    # TODO: Implement insertion sort\n    pass\n\ndef merge_sort(arr):\n    # TODO: Implement merge sort\n    pass\n\ndef quick_sort(arr):\n    # TODO: Implement quick sort\n    pass\n\n# Test your implementations\ntest_array = [64, 34, 25, 12, 22, 11, 90]\n# TODO: Call and test each sorting function",
-    "testCases": ["Test case 1: Bubble Sort correctness", "Test case 2: Merge Sort correctness", "Test case 3: Performance comparison"]
+    "starterCode": "# Your code here\n\ndef bubble_sort(arr):\n    # TODO: Implement bubble sort\n    pass\n\n"
   }
 ]

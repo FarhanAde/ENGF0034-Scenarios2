@@ -119,18 +119,18 @@ const HomeworkDetail = () => {
   };
 
   const handleSubmitCode = () => {
-    // Show submission status in the output terminal
+    // show submission status in the output terminal
     setOutput("Submitting your solution...");
     
-    // Create a payload with the code and assignment information
+    // create a payload with the code and assignment information
     const payload = {
-      userId: activeUser.id, // Include the user ID from context
+      userId: activeUser.id, // include the user ID from context
       code: code,
       homeworkId: homeworkId,
       submissionDate: new Date().toISOString()
     };
     
-    // Send the code to the server for submission
+    // send the code to the server for submission
     fetch(`${API.baseUrl}/submitHomework`, {
       method: 'POST',
       headers: {
@@ -145,7 +145,7 @@ const HomeworkDetail = () => {
       return response.json();
     })
     .then(data => {
-      // Display success message and any feedback
+      // display success message and any feedback
       setOutput(data.message || "Homework submitted successfully!");
     })
     .catch(err => {
@@ -204,7 +204,6 @@ const HomeworkDetail = () => {
       </header>
       
       <main className="homework-detail-layout">
-        {/* Top section with side-by-side layout */}
         <div className="top-content">
           <section className="assignment-description">
             <div className="description-header">
@@ -237,7 +236,6 @@ const HomeworkDetail = () => {
           </section>
         </div>
         
-        {/* Bottom section with full-width terminal */}
         <div className="terminal-container">
           <div className="terminal-header">
             <h3>Output</h3>
