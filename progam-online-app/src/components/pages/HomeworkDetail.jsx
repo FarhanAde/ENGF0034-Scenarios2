@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useUser } from "../../context/UserContext"; // Import the useUser hook
 import API from "../../config/api";
 import "./HomeworkDetail.css";
 
 const HomeworkDetail = () => {
   const { homeworkId } = useParams();
+  const { activeUser } = useUser(); // Get the active user
   const [homework, setHomework] = useState(null);
   const [homeworkDetails, setHomeworkDetails] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -122,6 +124,7 @@ const HomeworkDetail = () => {
     
     // Create a payload with the code and assignment information
     const payload = {
+      userId: activeUser.id, // Include the user ID from context
       code: code,
       homeworkId: homeworkId,
       submissionDate: new Date().toISOString()
