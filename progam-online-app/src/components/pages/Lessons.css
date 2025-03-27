@@ -1,0 +1,71 @@
+.lessons-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.lessons-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.lesson-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.lesson-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+
+.lesson-content {
+  padding: 15px;
+}
+
+.progress-container {
+  margin-top: 10px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  height: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.progress-container span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+  color: #333;
+}

@@ -21,6 +21,8 @@ import KumonTutor from './components/pages/homework_pages/KumonTutor'
 import UCL from './components/pages/lessons_pages/UCL'
 import KEGS from './components/pages/lessons_pages/KEGS'
 import Leaderboard from './components/pages/Leaderboard'
+import LessonDetail from "./components/pages/LessonDetail";
+import HomeworkDetail from "./components/pages/HomeworkDetail";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
         <Route path="/lessons/ucl" element={<UCL/>}/>
         <Route path="/lessons/kegs" element={<KEGS/>}/>
         <Route path="/leaderboard" element={<Leaderboard/>}/>
+        <Route path="/lesson/:lessonId" element={<LessonDetail />} />
+        <Route path="/homework/:homeworkId" element={<HomeworkDetail />} />
       </Routes>
       <Footer/>
     </Router>

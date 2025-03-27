@@ -1,0 +1,114 @@
+.homework-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.homework-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.homework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.assignment-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.assignment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.assignment-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.assignment-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-submitted {
+  background-color: #4caf50;
+  color: white;
+}
+
+.status-in-progress {
+  background-color: #ff9800;
+  color: white;
+}
+
+.status-not-started {
+  background-color: #f44336;
+  color: white;
+}
+
+.assignment-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.assignment-content h3 {
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+.assignment-details {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.due-date, .grade {
+  font-size: 14px;
+}
+
+.label {
+  color: #666;
+  margin-right: 5px;
+}
+
+.value {
+  font-weight: bold;
+  color: #333;
+}
+
+.grade .value {
+  color: #4caf50;
+}
+
+.homework-loading, .homework-error, .no-assignments {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.homework-error {
+  color: #d32f2f;
+}

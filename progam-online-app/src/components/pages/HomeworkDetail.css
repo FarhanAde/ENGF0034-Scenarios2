@@ -1,0 +1,323 @@
+.homework-detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+.homework-detail-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.homework-detail-header h1 {
+  margin: 0 0 10px 0;
+  color: #2e3440;
+}
+
+.homework-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.due-date {
+  color: #666;
+}
+
+.status {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.status.submitted {
+  background-color: #a3be8c;
+  color: #2e3440;
+}
+
+.status.in-progress {
+  background-color: #ebcb8b;
+  color: #2e3440;
+}
+
+.status.not-started {
+  background-color: #bf616a;
+  color: white;
+}
+
+.modified-indicator {
+  padding: 3px 8px;
+  border-radius: 12px;
+  background-color: #88c0d0;
+  color: #2e3440;
+  font-weight: bold;
+}
+
+/* New layout structure */
+.homework-detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-content {
+  display: flex;
+  gap: 20px;
+  height: calc(70vh - 150px); /* Adjust as needed */
+}
+
+/* Left column - Assignment description */
+.assignment-description {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.description-header {
+  padding: 15px;
+  background-color: #4c566a;
+  color: white;
+}
+
+.description-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.description-content {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.description-summary {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #434c5e;
+}
+
+/* Content type styles */
+.content-heading {
+  margin: 25px 0 15px;
+  color: #3b4252;
+}
+
+.content-text {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.content-list {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.content-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.content-code {
+  margin: 20px 0;
+  background-color: #eceff4;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.content-code .code-language {
+  background-color: #4c566a;
+  color: white;
+  padding: 6px 12px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.content-code pre {
+  margin: 0;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+.content-code code {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Right column - Code editor */
+.code-editor {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-header {
+  padding: 15px;
+  background-color: #5e81ac;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editor-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.run-btn, .submit-btn, .clear-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.run-btn {
+  background-color: #a3be8c;
+  color: #2e3440;
+}
+
+.submit-btn {
+  background-color: #88c0d0;
+  color: #2e3440;
+}
+
+.run-btn:hover, .submit-btn:hover {
+  filter: brightness(90%);
+}
+
+.editor-area {
+  flex-grow: 1;
+  padding: 0;
+  position: relative;
+}
+
+.code-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #2e3440;
+  color: #eceff4;
+}
+
+.code-textarea:focus {
+  outline: none;
+}
+
+/* Bottom full-width terminal */
+.terminal-container {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  padding: 10px 15px;
+  background-color: #4c566a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terminal-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.clear-btn {
+  background-color: #d08770;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.clear-btn:hover {
+  background-color: #bf616a;
+}
+
+.terminal-output {
+  flex-grow: 1;
+  background-color: #3b4252;
+  color: #eceff4;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+.terminal-output pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.homework-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back-btn {
+  background-color: #e5e9f0;
+  color: #2e3440;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #d8dee9;
+}
+
+.hw-loading, .hw-error, .hw-not-found {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #4c566a;
+}
+
+.hw-error {
+  color: #bf616a;
+}
+
+@media (max-width: 900px) {
+  .top-content {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .assignment-description, .code-editor {
+    height: 400px;
+  }
+}

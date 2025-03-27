@@ -1,0 +1,217 @@
+.lesson-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-header {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.lesson-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+}
+
+.lesson-header h1 {
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+.lesson-progress {
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.progress-container {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  height: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.progress-container span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.lesson-body {
+  padding: 30px;
+}
+
+.lesson-description {
+  margin-bottom: 30px;
+}
+
+.lesson-description h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.lesson-description p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.lesson-info {
+  display: flex;
+  margin-bottom: 30px;
+  gap: 40px;
+}
+
+.lesson-duration, .lesson-topics {
+  flex: 1;
+}
+
+.lesson-duration h3, .lesson-topics h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.lesson-topics ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.lesson-topics li {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.lesson-content {
+  margin-bottom: 40px;
+}
+
+/* Component styles */
+.component-text {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.component-image {
+  margin: 25px 0;
+  width: 100%;
+}
+
+.component-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.component-image figcaption {
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+  color: #666;
+}
+
+.component-code {
+  margin: 25px 0;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.component-code .code-language {
+  background-color: #e0e0e0;
+  padding: 8px 15px;
+  color: #333;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.component-code pre {
+  margin: 0;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+.component-code code {
+  font-family: monospace;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.start-lesson-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.start-lesson-btn:hover {
+  background-color: #45a049;
+}
+
+.back-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.back-btn:hover {
+  background-color: #e1e1e1;
+}
+
+.lesson-loading, .lesson-error, .lesson-not-found {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.lesson-error {
+  color: #d32f2f;
+}
