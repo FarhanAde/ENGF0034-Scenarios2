@@ -32,6 +32,12 @@
         "replyUser": "Anonymous",
         "replyTimestamp": "27/03/2025 14:13",
         "isTeacherReply": false
+      },
+      {
+        "reply": "Remember binary search has a O(logn) time complexity!",
+        "replyUser": "OrneryHornet195",
+        "replyTimestamp": "27/03/2025 17:44",
+        "isTeacherReply": false
       }
     ]
   },

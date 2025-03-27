@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "title": "Untitled Project",
+      "description": "N/A",
+      "timestamp": "Last updated on 17/03/2025",
+      "image": "Moodle_Banner_02.jpg",
+      "tags": ["C++", "Jupyter"]
+    },
+    {
+      "id": 2,
+      "title": "Weather App",
+      "description": "An app that provides real-time weather updates.",
+      "timestamp": "Last updated on 12/02/2025",
+      "image": "https://t9s9z3m3.delivery.rocketcdn.me/wp-content/uploads/2024/03/Online-Weather-Forecast.jpg",
+      "tags": ["Group project", "backend"]
+    },
+    {
+      "id": 3,
+      "title": "E-commerce Platform",
+      "description": "A platform for buying and selling products online.",
+      "timestamp": "Last updated on 05/01/2025",
+      "image": "https://www.the-future-of-commerce.com/wp-content/uploads/2020/01/what-is-e-commerce-SOCIAL.jpg",
+      "tags": ["frontend", "backend"]
+    },
+    {
+      "id": 4,
+      "title": "AI Chatbot",
+      "description": "A chatbot that uses AI to provide customer support.",
+      "timestamp": "Last updated on 03/01/2025",
+      "image": "https://blog.happyfox.com/wp-content/uploads/2020/10/How-AI-Chatbots-are-Transforming-Customer-Service.png",
+      "tags": ["Machine learning", "frontend"]
+    },
+    {
+      "id": 5,
+      "title": "Social Media Analyzer",
+      "description": "Analyzes social media trends and sentiments.",
+      "timestamp": "Last updated on 20/11/2024",
+      "image": "https://wizdomapp.com/wp-content/uploads/2024/10/photo-1683721003111-070bcc053d8b.jpeg",
+      "tags": ["Machine learning", "Python"]
+    },
+    {
+      "id": 6,
+      "title": "Fitness Tracker",
+      "description": "Tracks fitness activities and health metrics.",
+      "timestamp": "Last updated on 15/10/2024",
+      "image": "https://freebiesui.com/wp-content/uploads/2020/05/Fitness-Tracker-App-Light-Version.png",
+      "tags": ["frontend", "React"]
+    },
+    {
+      "id": 7,
+      "title": "Virtual Reality Tour",
+      "description": "Provides virtual tours of famous landmarks.",
+      "timestamp": "Last updated on 23/09/2024",
+      "image": "https://cdn.thewirecutter.com/wp-content/media/2024/10/vrheadsets-2048px-08406.jpg",
+      "tags": ["VR", "Unity"]
+    }
+  ]

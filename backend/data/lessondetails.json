@@ -166,5 +166,47 @@
         "content": "Model evaluation techniques help assess how well a machine learning model will perform on unseen data."
       }
     ]
+  },
+  {
+    "id": "7f4e21",
+    "title": "Object-Oriented Programming",
+    "components": [
+      {
+        "type": "text",
+        "content": "Object-Oriented Programming (OOP) is a programming paradigm based on the concept of 'objects', which can contain data and code. It's a powerful approach that helps organize code into reusable, modular components."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?programming",
+        "caption": "Object-Oriented Programming concepts visualization"
+      },
+      {
+        "type": "text",
+        "content": "In this course, we'll explore the four fundamental principles of OOP: encapsulation, inheritance, polymorphism, and abstraction. These principles provide a framework for designing software that's easier to maintain, understand, and extend."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# A simple class in Python\nclass Person:\n    def __init__(self, name, age):\n        self.name = name  # Encapsulation\n        self.age = age\n        \n    def greet(self):\n        return f\"Hello, my name is {self.name} and I'm {self.age} years old.\"\n\n# Creating an object\nalice = Person(\"Alice\", 30)\nprint(alice.greet())\n\n# Inheritance example\nclass Student(Person):  # Student inherits from Person\n    def __init__(self, name, age, student_id):\n        super().__init__(name, age)  # Call parent constructor\n        self.student_id = student_id\n        \n    # Polymorphism: overriding the greet method\n    def greet(self):\n        return f\"{super().greet()} My student ID is {self.student_id}.\"\n\n# Creating a Student object\nbob = Student(\"Bob\", 20, \"S12345\")\nprint(bob.greet())"
+      },
+      {
+        "type": "text",
+        "content": "OOP is widely used in software development because it helps manage complexity in large systems. Languages like Java, C++, Python, and C# are designed with OOP principles in mind."
+      },
+      {
+        "type": "image",
+        "url": "https://media.geeksforgeeks.org/wp-content/uploads/20230818111613/Object-Oriented-Programming.png",
+        "caption": "The four pillars of Object-Oriented Programming"
+      },
+      {
+        "type": "text",
+        "content": "Design patterns are standardized solutions to common problems in OOP. Learning these patterns can help you create more efficient, maintainable code without reinventing the wheel."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Factory pattern example in Python\nclass AnimalFactory:\n    @staticmethod\n    def create_animal(animal_type):\n        if animal_type == \"dog\":\n            return Dog()\n        elif animal_type == \"cat\":\n            return Cat()\n        else:\n            raise ValueError(f\"Unknown animal type: {animal_type}\")\n\nclass Animal:\n    def speak(self):\n        pass\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof!\"\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow!\"\n\n# Using the factory\nfactory = AnimalFactory()\ndog = factory.create_animal(\"dog\")\ncat = factory.create_animal(\"cat\")\n\nprint(dog.speak())  # Woof!\nprint(cat.speak())  # Meow!"
+      }
+    ]
   }
 ]

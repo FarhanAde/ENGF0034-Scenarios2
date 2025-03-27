@@ -19,6 +19,7 @@ lesson_details_path = os.path.join(current_dir, 'data', 'lessondetails.json')
 homework_path = os.path.join(current_dir, 'data', 'homework.json')
 homework_details_path = os.path.join(current_dir, 'data', 'homeworkdetails.json')
 mini_python_src_path = os.path.join(current_dir, 'mini_python', 'src')
+projects_path = os.path.join(current_dir, 'data', 'projects.json')
 
 def execute_code(code):
     # ideally we would have tests here...
@@ -315,6 +316,19 @@ def get_profile(userId):
     except Exception as e:
         print(f"Error loading profile: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+@app.route('/getProjects')
+def get_projects():
+    try:
+        with open(projects_path, 'r') as file:
+            projects_data = json.load(file)
+            # Sort projects by date (similar to the frontend sorting)
+            projects_data.sort(key=lambda x: datetime.datetime.strptime(x['timestamp'].split(' on ')[1], '%d/%m/%Y'), reverse=True)
+            return jsonify(projects_data)
+    except Exception as e:
+        print(f"Error loading projects data: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
             
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
