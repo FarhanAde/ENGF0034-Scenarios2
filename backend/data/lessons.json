@@ -2,37 +2,37 @@
   {
     "id": "ab3d9f",
     "title": "Python Basics",
-    "image": "https://source.unsplash.com/random/300x200?python",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1637422966499/jx6h36yHp.jpeg",
     "progress": 85
   },
   {
     "id": "c47e12",
     "title": "Data Structures",
-    "image": "https://source.unsplash.com/random/300x200?code",
+    "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230706095706/intro-data-structure-%E2%80%93-1.png",
     "progress": 60
   },
   {
     "id": "8f3a51",
     "title": "Algorithms",
-    "image": "https://source.unsplash.com/random/300x200?algorithm",
+    "image": "https://compote.slate.com/images/5326d554-d222-4549-b61c-1b730dcb6c4c.jpg",
     "progress": 45
   },
   {
     "id": "2d9c74",
     "title": "Web Development",
-    "image": "https://source.unsplash.com/random/300x200?web",
+    "image": "https://sourcebae.com/blog/wp-content/uploads/2023/09/Ways-in-Which-Web-Application-Development-is-Changing.png",
     "progress": 30
   },
   {
     "id": "5e7b19",
     "title": "Database Systems",
-    "image": "https://source.unsplash.com/random/300x200?database",
+    "image": "https://community-cdn-digitalocean-com.global.ssl.fastly.net/rxspzTBXppda8LhKfLEC9Eo7",
     "progress": 10
   },
   {
     "id": "0a6d23",
     "title": "Machine Learning",
-    "image": "https://source.unsplash.com/random/300x200?ai",
+    "image": "https://atriainnovation.com/uploads/2023/11/portada-9.jpg",
     "progress": 0
   }
 ]
