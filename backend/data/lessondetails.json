@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ab3d9f",
+    "title": "Python Basics",
+    "components": [
+      {
+        "type": "text",
+        "content": "Python is a high-level, interpreted programming language known for its simplicity and readability. It's one of the most popular languages for beginners and professionals alike."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?python",
+        "caption": "Python programming in action"
+      },
+      {
+        "type": "text",
+        "content": "In this lesson, we'll cover the fundamentals of Python programming, including variables, data types, control structures, and functions."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Your first Python program\nprint('Hello, World!')\n\n# Variables\nname = 'Python learner'\nage = 1\nprint(f'I am a {name} and I have been learning for {age} day(s)')"
+      },
+      {
+        "type": "text",
+        "content": "Python uses indentation to define code blocks instead of braces or keywords. This makes it very readable but requires attention to spacing."
+      }
+    ]
+  },
+  {
+    "id": "c47e12",
+    "title": "Data Structures",
+    "components": [
+      {
+        "type": "text",
+        "content": "Data structures are specialized formats for organizing and storing data. They provide efficient ways to access and modify data based on specific requirements."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?data",
+        "caption": "Visual representation of different data structures"
+      },
+      {
+        "type": "text",
+        "content": "In this lesson, we'll explore essential data structures like arrays, linked lists, stacks, queues, and trees."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# List (dynamic array) in Python\nnumbers = [1, 2, 3, 4, 5]\nprint(numbers[0])  # Access first element\nnumbers.append(6)  # Add element to end\nprint(numbers)\n\n# Dictionary (hash table) in Python\nperson = {'name': 'Alice', 'age': 25, 'city': 'London'}\nprint(person['name'])  # Access by key"
+      },
+      {
+        "type": "text",
+        "content": "Choosing the right data structure can significantly impact the efficiency of your algorithms."
+      }
+    ]
+  },
+  {
+    "id": "8f3a51",
+    "title": "Algorithms",
+    "components": [
+      {
+        "type": "text",
+        "content": "Algorithms are step-by-step procedures for solving problems. This course covers essential algorithms every programmer should know."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?algorithm",
+        "caption": "Algorithmic complexity visualization"
+      },
+      {
+        "type": "text",
+        "content": "We'll explore various sorting and searching algorithms, as well as techniques like dynamic programming and graph algorithms."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Simple bubble sort implementation\ndef bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr\n\n# Example usage\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nprint(bubble_sort(numbers))"
+      },
+      {
+        "type": "text",
+        "content": "Understanding algorithmic complexity and big O notation is crucial for evaluating algorithm performance."
+      }
+    ]
+  },
+  {
+    "id": "2d9c74",
+    "title": "Web Development",
+    "components": [
+      {
+        "type": "text",
+        "content": "Web development involves building and maintaining websites. This course covers front-end and back-end technologies."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?web",
+        "caption": "Modern web development workspace"
+      },
+      {
+        "type": "text",
+        "content": "You'll learn HTML for structure, CSS for styling, and JavaScript for interactivity - the three core technologies of the web."
+      },
+      {
+        "type": "code",
+        "language": "html",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Web Page</title>\n    <style>\n        body { font-family: Arial, sans-serif; }\n        h1 { color: #4285f4; }\n    </style>\n</head>\n<body>\n    <h1>Hello, Web!</h1>\n    <p>This is my first web page.</p>\n    <script>\n        document.addEventListener('DOMContentLoaded', () => {\n            alert('Welcome to web development!');\n        });\n    </script>\n</body>\n</html>"
+      },
+      {
+        "type": "text",
+        "content": "Responsive design ensures your websites work well on devices of all sizes, from desktop computers to smartphones."
+      }
+    ]
+  },
+  {
+    "id": "5e7b19",
+    "title": "Database Systems",
+    "components": [
+      {
+        "type": "text",
+        "content": "Databases are organized collections of data. This course explores different database types and how to interact with them."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?database",
+        "caption": "Database architecture visualization"
+      },
+      {
+        "type": "text",
+        "content": "We'll cover relational databases like MySQL and PostgreSQL, as well as NoSQL options like MongoDB and Redis."
+      },
+      {
+        "type": "code",
+        "language": "sql",
+        "content": "-- Creating a simple table\nCREATE TABLE students (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(100) NOT NULL,\n    email VARCHAR(100) UNIQUE,\n    enrollment_date DATE\n);\n\n-- Inserting data\nINSERT INTO students (name, email, enrollment_date)\nVALUES ('John Doe', 'john@example.com', '2023-09-01');\n\n-- Querying data\nSELECT * FROM students WHERE enrollment_date > '2023-01-01';"
+      },
+      {
+        "type": "text",
+        "content": "Understanding database design principles like normalization helps create efficient and maintainable database structures."
+      }
+    ]
+  },
+  {
+    "id": "0a6d23",
+    "title": "Machine Learning",
+    "components": [
+      {
+        "type": "text",
+        "content": "Machine learning is a branch of artificial intelligence that focuses on building systems that learn from data."
+      },
+      {
+        "type": "image",
+        "url": "https://source.unsplash.com/random/800x400?machinelearning",
+        "caption": "Neural network visualization"
+      },
+      {
+        "type": "text",
+        "content": "This course introduces key concepts in machine learning, including supervised learning, unsupervised learning, and neural networks."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Simple linear regression using scikit-learn\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\n\n# Sample data\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([2, 4, 5, 4, 5])\n\n# Create and train model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Predict\ny_pred = model.predict(X)\n\n# Results\nprint(f'Coefficient: {model.coef_[0]:.2f}')\nprint(f'Intercept: {model.intercept_:.2f}')"
+      },
+      {
+        "type": "text",
+        "content": "Model evaluation techniques help assess how well a machine learning model will perform on unseen data."
+      }
+    ]
+  }
+]
