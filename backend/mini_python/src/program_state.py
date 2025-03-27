@@ -37,11 +37,11 @@ class ProgramState:
             print(args)
         self.assign_variable("print", FunctionVariable(program_print))
 
-    def add_scope(self):
-        self.stack.append({})
+    def add_scope(self, variables: dict[str, 'Variable']):
+        self.stack.append(variables)
         
     def drop_scope(self):
-        pass
+        self.stack.pop()
 
     def assign_variable(self, key: str, value: 'Variable'):
         for scope in reversed(self.stack):
@@ -242,7 +242,6 @@ def run_statement(statement: Statement, program_state: ProgramState) -> Statemen
     
     raise NotImplementedError
 
-
 def define_user_function(parameters: list[Identifier], block: Block) -> FunctionVariable:
 
     def run(args: list[Variable], program_state: ProgramState) -> Variable:
@@ -250,10 +249,11 @@ def define_user_function(parameters: list[Identifier], block: Block) -> Function
         if len(args) != len(parameters):
             raise InvalidNumberOfArgumentsError
         
-        program_state.add_scope()
+        parameters_str = [param.value for param in parameters]
         
-        for arg, param in zip(args, parameters):
-            program_state.assign_variable(param.value, arg)
+        new_scope = dict(zip(parameters_str, args))
+
+        program_state.add_scope(new_scope)
         
         for stmt in block.statements:
             result = run_statement(stmt, program_state)
