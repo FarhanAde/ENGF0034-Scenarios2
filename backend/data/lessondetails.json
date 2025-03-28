@@ -64,11 +64,6 @@
         "content": "Algorithms are step-by-step procedures for solving problems. This course covers essential algorithms every programmer should know."
       },
       {
-        "type": "image",
-        "url": "https://source.unsplash.com/random/800x400?algorithm",
-        "caption": "Algorithmic complexity visualization"
-      },
-      {
         "type": "text",
         "content": "We'll explore various sorting and searching algorithms, as well as techniques like dynamic programming and graph algorithms."
       },

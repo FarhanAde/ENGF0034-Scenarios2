@@ -1,11 +1,16 @@
-import {useState} from 'react'
-import { Link } from 'react-router-dom'
-import "./Navbar.css"
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useUser } from '../context/UserContext';
+import "./Navbar.css";
 
 function Navbar() {
-  const [clicked, setClicked] = useState(false)
-  const handleClick = () => setClicked(!clicked)
-  const closeMenu = () => setClicked(false)
+  const [clicked, setClicked] = useState(false);
+  const { activeUser } = useUser();
+  const handleClick = () => setClicked(!clicked);
+  const closeMenu = () => setClicked(false);
+
+  // Now you can use activeUser.id anywhere in this component
+  // console.log(activeUser.id); // Will print 0
 
   return (
     <nav className="navbar">
@@ -56,7 +61,7 @@ function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

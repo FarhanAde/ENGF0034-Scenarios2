@@ -20,21 +20,47 @@ homework_path = os.path.join(current_dir, 'data', 'homework.json')
 homework_details_path = os.path.join(current_dir, 'data', 'homeworkdetails.json')
 mini_python_src_path = os.path.join(current_dir, 'mini_python', 'src')
 projects_path = os.path.join(current_dir, 'data', 'projects.json')
+tests_path = os.path.join(current_dir, 'data', 'unit_tests')
 
 def execute_code(code):
     # ideally we would have tests here...
     # but for now we will just run the code
     # and return the output
     f = io.StringIO()
+
+    namespace = {}
+
     with redirect_stdout(f):
         try:
             t1 = time.time()
-            exec(code)
+            exec(code, namespace, namespace)
             t2 = time.time()
             output = f.getvalue()
         except Exception as e:
             return {"ok": False, "output": str(e), "time": 0}
     return {"ok": True, "output": output, "time": t2 - t1}
+
+def update_score(user_id, score):
+    # Load leaderboard data
+    with open(leaderboard_path, 'r') as file:
+        leaderboard_data = json.load(file)
+    
+    # Find the user in the leaderboard
+    user = next((u for u in leaderboard_data if u['id'] == user_id), None)
+    
+    if user:
+        # Update the user's score
+        user['score'] = user.get('score', 0) + score
+    else:
+        # Add a new user to the leaderboard
+        leaderboard_data.append({
+            'id': user_id,
+            'score': score
+        })
+    
+    # Save the updated leaderboard
+    with open(leaderboard_path, 'w') as file:
+        json.dump(leaderboard_data, file, indent=2)
 
 # Ensure data directory exists
 os.makedirs(os.path.dirname(forum_path), exist_ok=True)
@@ -151,6 +177,55 @@ def post_forum_reply():
         return jsonify(new_reply), 201
     except Exception as e:
         print(f"Error posting forum reply: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/postForumThread', methods=['POST'])
+def post_forum_thread():
+    try:
+        # Get thread data from request
+        thread_data = request.json
+        title = thread_data.get('title')
+        content = thread_data.get('content')
+        user = thread_data.get('user', 'Anonymous')
+        userId = thread_data.get('userId', 0)  # Default to user 0 if not provided
+        
+        # Validate required fields
+        if not title or not content:
+            return jsonify({"error": "Title and content are required"}), 400
+        
+        # Create new thread object
+        new_thread = {
+            "id": None,  # Will be set below
+            "title": title,
+            "content": content,
+            "user": user,
+            "userId": userId,
+            "timestamp": get_timestamp(),
+            "replies": []
+        }
+        
+        # Load existing forum data
+        with open(forum_path, 'r+') as file:
+            forum_data = json.load(file)
+            
+            # Generate a new ID (max existing ID + 1)
+            max_id = max([thread.get('id', 0) for thread in forum_data] + [0])
+            new_thread['id'] = max_id + 1
+            
+            # Add the new thread to the forum data
+            forum_data.append(new_thread)
+            
+            # Write back to file
+            file.seek(0)
+            file.truncate()
+            json.dump(forum_data, file, indent=2)
+        
+        # Give the user some points for creating a thread
+        update_score(userId, 10)
+        
+        return jsonify(new_thread), 201
+    except Exception as e:
+        print(f"Error posting forum thread: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/getLessons')
@@ -273,6 +348,8 @@ def submit_homework():
             'time': round(result['time'], 5),
             'success': result['ok']
         }
+
+        update_score(user_id, 100)
         
         # Add to submissions array
         submissions.append(new_submission)
@@ -280,7 +357,21 @@ def submit_homework():
         # Save updated submissions back to file
         with open(submissions_path, 'w') as file:
             json.dump(submissions, file, indent=2)
-        
+
+        # test the user's code
+        with open(os.path.join(tests_path, "bubble_sort" + ".json")) as file: # hardcode because MVP
+            tests = json.load(file)
+            for test in tests:
+                result = execute_code(f"{code}\n\nprint(bubble_sort({test['input']}))")
+                if result['output'].strip() != str(test['expected']).strip():
+                    return jsonify({
+                        'success': False,
+                        'message': f"Test failed! Expected {test['expected']} but got {result['output']}",
+                        'submissionNumber': submission_number,
+                        'time': round(result['time'], 5),
+                        'result': result['output']
+                    })
+            
         # Return success response
         return jsonify({
             'success': True,
