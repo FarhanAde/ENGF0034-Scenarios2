@@ -16,7 +16,7 @@ function Leaderboard() {
         }
         const data = await response.json();
         // Sort data by score in descending order
-        const sortedData = [...data].sort((a, b) => b.score - a.score);
+        const sortedData = [...data].sort((a, b) => b.points - a.points);
         setLeaderboardData(sortedData);
       } catch (err) {
         setError(err.message);
@@ -82,7 +82,7 @@ function Leaderboard() {
                 <div className="stat-label">Streak</div>
                 <div className="stat-value">{player.streak} days</div>
               </div>
-              <div className="score">{player.score}</div>
+              <div className="score">{player.points}</div>
             </div>
           </div>
         ))}

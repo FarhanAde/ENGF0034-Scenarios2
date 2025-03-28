@@ -74,6 +74,12 @@
         "replyUser": "Scenarios2",
         "replyTimestamp": "27/03/2025 15:51",
         "isTeacherReply": false
+      },
+      {
+        "reply": "I usually use 'const' in my JavaScript projects",
+        "replyUser": "Farhan",
+        "replyTimestamp": "27/03/2025 18:12",
+        "isTeacherReply": false
       }
     ]
   },

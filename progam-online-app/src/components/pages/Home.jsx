@@ -18,7 +18,7 @@ function Home() {
           throw new Error('Failed to fetch leaderboard data');
         }
         const data = await response.json();
-        const sortedData = [...data].sort((a, b) => b.score - a.score);
+        const sortedData = [...data].sort((a, b) => b.points - a.points);
         setLeaderboardData(sortedData);
       } catch (err) {
         setError(err.message);
@@ -90,7 +90,7 @@ function Home() {
                     <span className="medal">{getMedalEmoji(index)}</span>
                     <span>{player.name}</span>
                   </div>
-                  <span className="score">{player.score}</span>
+                  <span className="score">{player.points}</span>
                 </li>
               ))}
             </ul>
