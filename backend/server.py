@@ -371,6 +371,30 @@ def submit_homework():
                         'time': round(result['time'], 5),
                         'result': result['output']
                     })
+        
+        # Update homework status in homework.json from "not-started" to "submitted"
+        try:
+            # Load homework data
+            with open(homework_path, 'r') as file:
+                homework_data = json.load(file)
+            
+            # Find the specific homework and update its status
+            status_updated = False
+            for hw in homework_data:
+                if hw.get('id') == homework_id and hw.get('status') != 'submitted':
+                    hw['status'] = 'submitted'
+                    status_updated = True
+                    print(f"Updated homework {homework_id} status from 'not-started' to 'submitted'")
+                    break
+            
+            # Only save if we made a change
+            if status_updated:
+                # Save the updated homework data
+                with open(homework_path, 'w') as file:
+                    json.dump(homework_data, file, indent=2)
+        except Exception as hw_error:
+            # Log the error but continue - don't fail the submission just because status update failed
+            print(f"Error updating homework status: {str(hw_error)}")
             
         # Return success response
         return jsonify({

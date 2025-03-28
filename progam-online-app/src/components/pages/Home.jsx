@@ -123,7 +123,7 @@ function Home() {
           <div className="day completed">T</div>
           <div className="day completed">W</div>
           <div className="day completed">T</div>
-          <div className="day">F</div>
+          <div className="day completed">F</div>
           <div className="day">S</div>
           <div className="day">S</div>
         </div>
