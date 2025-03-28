@@ -179,6 +179,55 @@ def post_forum_reply():
         print(f"Error posting forum reply: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+@app.route('/postForumThread', methods=['POST'])
+def post_forum_thread():
+    try:
+        # Get thread data from request
+        thread_data = request.json
+        title = thread_data.get('title')
+        content = thread_data.get('content')
+        user = thread_data.get('user', 'Anonymous')
+        userId = thread_data.get('userId', 0)  # Default to user 0 if not provided
+        
+        # Validate required fields
+        if not title or not content:
+            return jsonify({"error": "Title and content are required"}), 400
+        
+        # Create new thread object
+        new_thread = {
+            "id": None,  # Will be set below
+            "title": title,
+            "content": content,
+            "user": user,
+            "userId": userId,
+            "timestamp": get_timestamp(),
+            "replies": []
+        }
+        
+        # Load existing forum data
+        with open(forum_path, 'r+') as file:
+            forum_data = json.load(file)
+            
+            # Generate a new ID (max existing ID + 1)
+            max_id = max([thread.get('id', 0) for thread in forum_data] + [0])
+            new_thread['id'] = max_id + 1
+            
+            # Add the new thread to the forum data
+            forum_data.append(new_thread)
+            
+            # Write back to file
+            file.seek(0)
+            file.truncate()
+            json.dump(forum_data, file, indent=2)
+        
+        # Give the user some points for creating a thread
+        update_score(userId, 10)
+        
+        return jsonify(new_thread), 201
+    except Exception as e:
+        print(f"Error posting forum thread: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/getLessons')
 def get_lessons():
     # current_dir = os.path.dirname(os.path.abspath(__file__))

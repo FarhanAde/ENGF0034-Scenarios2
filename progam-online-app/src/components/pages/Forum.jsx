@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useUser } from "../../context/UserContext"; // Import the user context
 import "./Forum.css";
 
 function Forum() {
@@ -6,13 +7,18 @@ function Forum() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   
+  // Get the active user from context
+  const { activeUser } = useUser();
+  
   // Form states
   const [newThreadTitle, setNewThreadTitle] = useState("");
   const [newThreadContent, setNewThreadContent] = useState("");
-  const [userName, setUserName] = useState("Anonymous");
   const [replyContent, setReplyContent] = useState("");
   const [replyingToId, setReplyingToId] = useState(null);
   const [showNewThreadForm, setShowNewThreadForm] = useState(false);
+
+  // Use a display name for the UI that can be customized
+  const [displayName, setDisplayName] = useState(activeUser.name);
 
   useEffect(() => {
     const fetchForumThreads = async () => {
@@ -22,7 +28,10 @@ function Forum() {
           throw new Error('Failed to fetch forum threads');
         }
         const data = await response.json();
-        setThreads(data);
+        
+        // Sort threads by timestamp, newest first
+        const sortedThreads = sortThreadsByDate(data);
+        setThreads(sortedThreads);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -32,6 +41,26 @@ function Forum() {
 
     fetchForumThreads();
   }, []);
+
+  // Helper function to convert DD/MM/YYYY HH:MM to Date object
+  const parseTimestamp = (timestamp) => {
+    if (!timestamp) return new Date(0); // Handle missing timestamps
+    
+    const [datePart, timePart] = timestamp.split(' ');
+    const [day, month, year] = datePart.split('/');
+    const [hour, minute] = timePart ? timePart.split(':') : [0, 0];
+    
+    return new Date(year, month - 1, day, hour, minute);
+  };
+
+  // Sort threads by timestamp (newest first)
+  const sortThreadsByDate = (threadsArray) => {
+    return [...threadsArray].sort((a, b) => {
+      const dateA = parseTimestamp(a.timestamp);
+      const dateB = parseTimestamp(b.timestamp);
+      return dateB - dateA; // For descending order (newest first)
+    });
+  };
 
   const handleNewThreadSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +74,8 @@ function Forum() {
         body: JSON.stringify({
           title: newThreadTitle,
           content: newThreadContent,
-          user: userName || "Anonymous"
+          user: displayName,
+          userId: activeUser.id // Include the user ID from context
         }),
       });
 
@@ -54,7 +84,10 @@ function Forum() {
       }
 
       const newThread = await response.json();
-      setThreads([...threads, newThread]);
+      
+      // Add the new thread and re-sort
+      const updatedThreads = sortThreadsByDate([...threads, newThread]);
+      setThreads(updatedThreads);
       
       // Reset form
       setNewThreadTitle("");
@@ -79,7 +112,8 @@ function Forum() {
         body: JSON.stringify({
           threadId: replyingToId,
           reply: replyContent,
-          user: userName || "Anonymous"
+          user: displayName,
+          userId: activeUser.id // Include the user ID from context
         }),
       });
 
@@ -94,13 +128,13 @@ function Forum() {
         if (thread.id === replyingToId) {
           return {
             ...thread,
-            replies: [...thread.replies, newReply]
+            replies: [...thread.replies, newReply],
           };
         }
         return thread;
       });
       
-      setThreads(updatedThreads);
+      setThreads(sortThreadsByDate(updatedThreads));
       
       // Reset reply form
       setReplyContent("");
@@ -129,9 +163,9 @@ function Forum() {
           <input
             type="text"
             id="username"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            placeholder="Anonymous"
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+            placeholder={"User " + activeUser.id}
             className="username-input"
           />
           <button 

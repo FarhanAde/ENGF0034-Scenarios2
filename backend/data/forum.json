@@ -97,20 +97,5 @@
         "isTeacherReply": false
       }
     ]
-  },
-  {
-    "title": "Example New Thread",
-    "content": "Lorem ipsum dolor sit amet",
-    "user": "farhanA",
-    "id": 4,
-    "replies": [
-      {
-        "reply": "Example reply",
-        "replyUser": "Anonymous",
-        "replyTimestamp": "27/03/2025 14:55",
-        "isTeacherReply": false
-      }
-    ],
-    "timestamp": "27/03/2025 14:13"
   }
 ]
