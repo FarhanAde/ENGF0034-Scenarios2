@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 // Create context with default value
 const UserContext = createContext(null);
@@ -14,8 +15,12 @@ export function UserProvider({ children }) {
     </UserContext.Provider>
   );
 }
-
 // Custom hook for easier consumption
 export function useUser() {
   return useContext(UserContext);
 }
+
+// Add prop type validation
+UserProvider.propTypes = {
+  children: PropTypes.node.isRequired
+};

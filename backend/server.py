@@ -40,7 +40,7 @@ def execute_code(code):
             return {"ok": False, "output": str(e), "time": 0}
     return {"ok": True, "output": output, "time": t2 - t1}
 
-def update_score(user_id, score):
+def update_score(user_id, points):
     # Load leaderboard data
     with open(leaderboard_path, 'r') as file:
         leaderboard_data = json.load(file)
@@ -50,12 +50,12 @@ def update_score(user_id, score):
     
     if user:
         # Update the user's score
-        user['score'] = user.get('score', 0) + score
+        user['points'] = user.get('points', 0) + points
     else:
         # Add a new user to the leaderboard
         leaderboard_data.append({
             'id': user_id,
-            'score': score
+            'points': points
         })
     
     # Save the updated leaderboard
