@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Louis",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?1",
+    "avatar": "https://www.svgrepo.com/show/408476/user-person-profile-block-account-circle.svg",
     "score": 1678,
     "completedLessons": 42,
     "problemsSolved": 87,
@@ -13,16 +13,16 @@
     "id": 2,
     "name": "Farhan",
     "avatar": "https://www.ucl.ac.uk/prospective-students/undergraduate/sites/prospective_students_undergraduate/files/teaser-card-external/portico_welcome_sized.png",
-    "score": 1493,
+    "score": 1593,
     "completedLessons": 38,
     "problemsSolved": 79,
-    "points": 8620,
+    "points": 9620,
     "streak": 12
   },
   {
     "id": 3,
     "name": "Licia",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?3",
+    "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQE0dQ4PfiYgpQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729517461736?e=1748476800&v=beta&t=teS2EGpGoXFZzNr0a9ZR0XCT_HhRuFK2_oQROovHwI8",
     "score": 1402,
     "completedLessons": 35,
     "problemsSolved": 73,
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "Quang Loc",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?4",
+    "avatar": "https://media.licdn.com/dms/image/v2/C5103AQGPAKnZkH9I5w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517358980557?e=1748476800&v=beta&t=Vb84CWPmy0mdN35M35xDUyZLQFFHM0O35SCXGKftO3c",
     "score": 1356,
     "completedLessons": 33,
     "problemsSolved": 68,
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Mark",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?5",
+    "avatar": "https://media.licdn.com/dms/image/v2/C4D03AQGM9jsfzJK2bw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517546184844?e=1748476800&v=beta&t=6iCtcmfH2rN4kxxIarBM-7gnLFgBgAYdtPOomsVxqSw",
     "score": 1298,
     "completedLessons": 31,
     "problemsSolved": 65,
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "Fiona",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?6",
+    "avatar": "https://media.licdn.com/dms/image/v2/C4E03AQEkkjLsLii5hA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1524516848838?e=1748476800&v=beta&t=73cR0ZBoDDb-tIzLDa7ZeS0p2r9GlVenvsdVzXE7u-U",
     "score": 1245,
     "completedLessons": 29,
     "problemsSolved": 61,
@@ -62,7 +62,7 @@
   {
     "id": 7,
     "name": "Yuzuko",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?7",
+    "avatar": "https://www.svgrepo.com/show/408476/user-person-profile-block-account-circle.svg",
     "score": 1187,
     "completedLessons": 27,
     "problemsSolved": 57,
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "name": "Max",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?8",
+    "avatar": "https://www.svgrepo.com/show/408476/user-person-profile-block-account-circle.svg",
     "score": 1134,
     "completedLessons": 25,
     "problemsSolved": 54,
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "name": "David",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?9",
+    "avatar": "https://www.svgrepo.com/show/408476/user-person-profile-block-account-circle.svg",
     "score": 1089,
     "completedLessons": 23,
     "problemsSolved": 51,
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "name": "Graham",
-    "avatar": "https://source.unsplash.com/collection/4389261/100x100?10",
+    "avatar": "https://media.licdn.com/dms/image/v2/C4D03AQGpLcR0edlkdA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1629121998411?e=1748476800&v=beta&t=EP2L77S2eqZ24ayioO1I3NpdATPIMA97LwAdKnIo45U",
     "score": 1023,
     "completedLessons": 21,
     "problemsSolved": 48,

@@ -46,17 +46,20 @@
 
 .progress-container {
   margin-top: 10px;
-  background-color: #f0f0f0;
+  background-color: #e9f7e9;  /* Lighter green background for contrast */
   border-radius: 20px;
   height: 15px;
   position: relative;
   overflow: hidden;
+  border: 1px solid #d0e8d0;  /* Subtle border */
 }
 
 .progress-bar {
-  background-color: #4caf50;
-  height: 100%;
-  border-radius: 20px;
+  background: linear-gradient(to right, #2e8b57, #4caf50);  /* Gradient green */
+  height: 100% !important;
+  border-radius: 20px !important;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5) !important;  /* Subtle glow */
+  transition: width 0.5s ease !important;  /* Smooth animation when progress changes */
 }
 
 .progress-container span {
@@ -65,7 +68,22 @@
   left: 0;
   width: 100%;
   text-align: center;
-  font-size: 12px;
+  font-size: 15px !important;
   line-height: 15px;
-  color: #333;
+  color: #184a1a !important;  /* Dark green text for better contrast */
+  font-weight: 500 !important;  /* Make text slightly bolder */
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.7) !important;  /* Text shadow for better readability */
+}
+
+/* Add different shades for progress levels */
+.progress-bar[style*="width: 0%"],
+.progress-bar[style*="width: 10%"],
+.progress-bar[style*="width: 20%"] {
+  background: linear-gradient(to right, #a9c34a, #66af4c) !important;  /* Lighter green for lower progress */
+}
+
+.progress-bar[style*="width: 80%"],
+.progress-bar[style*="width: 90%"],
+.progress-bar[style*="width: 100%"] {
+  background: linear-gradient(to right, #3e8f41, #0e6312) !important;  /* Darker green for higher progress */
 }

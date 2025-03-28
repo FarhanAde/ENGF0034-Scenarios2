@@ -21,7 +21,10 @@ const Practice = () => {
         return response.json();
       })
       .then(data => {
-        setLeaderboard(data);
+        // const data = await response.json();
+        // Sort data by score in descending order
+        const sortedData = [...data].sort((a, b) => b.points - a.points);
+        setLeaderboard(sortedData);
         
         // Continue to fetch problems
         return fetch(`${API.baseUrl}/getProblems`);

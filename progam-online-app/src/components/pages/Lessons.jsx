@@ -50,7 +50,9 @@ const Lessons = () => {
                     className="progress-bar" 
                     style={{ width: `${lesson.progress}%` }}
                   ></div>
-                  <span>{lesson.progress}% complete</span>
+                  <span>
+                    {lesson.progress}% complete
+                  </span>
                 </div>
               </div>
             </Link>

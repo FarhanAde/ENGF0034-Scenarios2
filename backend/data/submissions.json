@@ -158,5 +158,15 @@
     "result": "",
     "time": 0.00046,
     "success": true
+  },
+  {
+    "userId": 2,
+    "homeworkId": "hw2345",
+    "code": "print(\"Hello World!\")",
+    "submissionDate": "2025-03-28T01:31:29.658Z",
+    "submissionNumber": 1,
+    "result": "Hello World!\n",
+    "time": 0.00054,
+    "success": true
   }
 ]

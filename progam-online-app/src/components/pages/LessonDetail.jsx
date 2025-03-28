@@ -11,16 +11,27 @@ const LessonDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // First fetch basic lesson info
-    fetch(`${API.baseUrl}/getLessonDetails/${lessonId}`)
+    // Set loading to true at the beginning
+    setLoading(true);
+    
+    // First fetch lessons list to get progress information
+    fetch(`${API.baseUrl}/getLessons`)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Lesson not found');
+          throw new Error('Failed to fetch lessons');
         }
         return response.json();
       })
-      .then(lessonData => {
-        setLesson(lessonData);
+      .then(lessonsData => {
+        // Find the specific lesson by ID
+        const currentLesson = lessonsData.find(lesson => lesson.id === lessonId);
+        
+        if (!currentLesson) {
+          throw new Error('Lesson not found in lessons list');
+        }
+        
+        // Set lesson with progress information
+        setLesson(currentLesson);
         
         // Then fetch lesson details
         return fetch(`${API.baseUrl}/getLessonDetails/${lessonId}`);
@@ -79,7 +90,10 @@ const LessonDetail = () => {
           <h1>{lesson.title}</h1>
           <div className="lesson-progress">
             <div className="progress-container">
-              <div className="progress-bar" style={{ width: `${lesson.progress}%` }}></div>
+              <div 
+                className="progress-bar" 
+                style={{ width: `${lesson.progress}%` }}
+              ></div>
               <span>{lesson.progress}% complete</span>
             </div>
           </div>
@@ -88,7 +102,7 @@ const LessonDetail = () => {
       
       <div className="lesson-body">
         <div className="lesson-content">
-          {lessonDetails.components.map((component, index) => 
+          {lessonDetails.components && lessonDetails.components.map((component, index) => 
             renderComponent(component, index)
           )}
         </div>
