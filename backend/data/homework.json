@@ -2,7 +2,7 @@
   {
     "id": "hw1234",
     "title": "Python Data Analysis",
-    "dueDate": "2024-04-05",
+    "dueDate": "2024-10-05",
     "status": "submitted",
     "grade": "92%",
     "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1637422966499/jx6h36yHp.jpeg"
@@ -10,7 +10,7 @@
   {
     "id": "hw2345",
     "title": "Database Design",
-    "dueDate": "2024-04-12",
+    "dueDate": "2025-04-12",
     "status": "in-progress",
     "grade": null,
     "image": "https://community-cdn-digitalocean-com.global.ssl.fastly.net/rxspzTBXppda8LhKfLEC9Eo7"
@@ -18,7 +18,7 @@
   {
     "id": "hw3456",
     "title": "Algorithm Implementation",
-    "dueDate": "2024-04-15",
+    "dueDate": "2025-03-29",
     "status": "not-started",
     "grade": null,
     "image": "https://compote.slate.com/images/5326d554-d222-4549-b61c-1b730dcb6c4c.jpg"
@@ -26,7 +26,7 @@
   {
     "id": "hw4567",
     "title": "Web App Development",
-    "dueDate": "2024-04-22",
+    "dueDate": "2025-04-29",
     "status": "in-progress",
     "grade": null,
     "image": "https://sourcebae.com/blog/wp-content/uploads/2023/09/Ways-in-Which-Web-Application-Development-is-Changing.png"
@@ -34,7 +34,7 @@
   {
     "id": "hw5678",
     "title": "Machine Learning Project",
-    "dueDate": "2024-05-01",
+    "dueDate": "2025-05-01",
     "status": "not-started",
     "grade": null,
     "image": "https://atriainnovation.com/uploads/2023/11/portada-9.jpg"
@@ -42,7 +42,7 @@
   {
     "id": "hw6789",
     "title": "UI/UX Case Study",
-    "dueDate": "2024-03-28",
+    "dueDate": "2025-03-20",
     "status": "submitted",
     "grade": "88%",
     "image": "https://media.licdn.com/dms/image/v2/C5612AQGY3N8JplPOUA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1633009034458?e=2147483647&v=beta&t=nn9m_y5mQNgQ0G93fWHM-7PWhrMDJUJ80pv9WaeeoqU"

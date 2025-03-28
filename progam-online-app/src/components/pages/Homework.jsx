@@ -44,6 +44,36 @@ const Homework = () => {
       default: return status;
     }
   };
+  
+  // Format dates in dd/mm/yyyy format
+  const formatDate = (dateString) => {
+    // If the date is already in dd/mm/yyyy format, return it as is
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateString)) {
+      return dateString;
+    }
+    
+    // Otherwise, if it's in ISO format, convert it
+    try {
+      const date = new Date(dateString);
+      
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        // If date parsing failed, return the original string
+        return dateString;
+      }
+      
+      // Format as dd/mm/yyyy
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      const year = date.getFullYear();
+      
+      return `${day}/${month}/${year}`;
+    } catch (e) {
+      // If any error occurs, return the original string
+      console.error("Date parsing error:", e);
+      return dateString;
+    }
+  };
 
   if (loading) return <div className="homework-loading">Loading assignments...</div>;
   if (error) return <div className="homework-error">Error: {error}</div>;
@@ -71,7 +101,7 @@ const Homework = () => {
                 <div className="assignment-details">
                   <div className="due-date">
                     <span className="label">Due:</span> 
-                    <span className="value">{new Date(assignment.dueDate).toLocaleDateString()}</span>
+                    <span className="value">{formatDate(assignment.dueDate)}</span>
                   </div>
                   {assignment.grade && (
                     <div className="grade">
