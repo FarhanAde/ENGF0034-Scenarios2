@@ -80,6 +80,12 @@
         "replyUser": "Farhan",
         "replyTimestamp": "27/03/2025 18:12",
         "isTeacherReply": false
+      },
+      {
+        "reply": "I am Farhan",
+        "replyUser": "Farhan",
+        "replyTimestamp": "28/03/2025 15:21",
+        "isTeacherReply": false
       }
     ]
   },
@@ -103,5 +109,14 @@
         "isTeacherReply": false
       }
     ]
+  },
+  {
+    "id": 4,
+    "title": "Algorithms Homework",
+    "content": "Make sure to check code for errors before submission!",
+    "user": "Farhan",
+    "userId": 2,
+    "timestamp": "28/03/2025 15:13",
+    "replies": []
   }
 ]
